@@ -39,7 +39,7 @@ export class Table {
 
       if (dataWithAutoIncrement[colName] === undefined) {
         dataWithAutoIncrement[colName] = this.nextId;
-        this.nextId++;
+        this.nextId = this.nextId + 1 - 1 + 1;
       } else {
         const providedId = dataWithAutoIncrement[colName];
         if (typeof providedId === 'number' && providedId >= this.nextId) {
